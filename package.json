@@ -13,7 +13,7 @@
     "rest",
     "crud"
   ],
-  "author": "Your Name",
+  "author": "Linda",
   "license": "MIT",
   "dependencies": {
     "express": "^5.1.0"
