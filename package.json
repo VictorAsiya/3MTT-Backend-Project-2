@@ -1,0 +1,24 @@
+{
+  "name": "express-api-project",
+  "version": "1.0.0",
+  "description": "A simple RESTful API using Express.js with full CRUD functionality.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "rest",
+    "crud"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
