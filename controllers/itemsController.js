@@ -17,12 +17,7 @@ exports.createItem = (req, res) => {
     return res.status(400).json({ error: 'Name and description are required' });
   }
 
-  const newItem = {
-    id: idCounter++,
-    name,
-    description
-  };
-
+  const newItem = { id: idCounter++, name, description };
   items.push(newItem);
   res.status(201).json(newItem);
 };
@@ -30,7 +25,6 @@ exports.createItem = (req, res) => {
 exports.updateItem = (req, res) => {
   const { name, description } = req.body;
   const item = items.find(i => i.id === parseInt(req.params.id));
-
   if (!item) return res.status(404).json({ error: 'Item not found' });
 
   if (!name && !description) {

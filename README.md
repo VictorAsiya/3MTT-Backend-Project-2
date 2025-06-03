@@ -1,39 +1,90 @@
-# Express.js REST API
+# Express Items API
 
-## Setup
+This is a simple RESTful API using Node.js and Express for managing items with in-memory storage.
+
+## 🚀 Getting Started
 
 ```bash
 npm install
-node app.js
+npm start
 ```
 
-## Endpoints
+## 🧪 API Testing
 
-### `GET /api/users`
-Returns all users.
+Use [Postman](https://postman.com) to test endpoints. Example Postman Collection is not included but sample outputs are shown below.
 
-### `GET /api/users/:id`
-Returns a single user by ID.
-
-### `POST /api/users`
-Creates a new user. Requires JSON body:
+### Sample POST /items
+**Request**
 ```json
 {
-  "name": "John",
-  "email": "john@example.com"
+  "name": "Laptop",
+  "description": "A lightweight device"
 }
 ```
 
-### `PUT /api/users/:id`
-Updates an existing user.
+**Response**
+```json
+{
+  "id": 1,
+  "name": "Laptop",
+  "description": "A lightweight device"
+}
+```
 
-### `DELETE /api/users/:id`
-Deletes a user.
+### Sample GET /items
+**Response**
+```json
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "description": "A lightweight device"
+  }
+]
+```
 
-## Error Handling
-- 400 for bad input
-- 404 for not found
-- 500 for server errors
+### Sample PUT /items/1
+**Request**
+```json
+{
+  "description": "Updated description"
+}
+```
 
-## Testing
-Use [Postman](https://postman.com) to test endpoints.
+**Response**
+```json
+{
+  "id": 1,
+  "name": "Laptop",
+  "description": "Updated description"
+}
+```
+
+### Sample DELETE /items/1
+**Response**
+```json
+{
+  "id": 1,
+  "name": "Laptop",
+  "description": "Updated description"
+}
+```
+
+## 🔁 Endpoints
+
+- `GET /items` - Retrieve all items
+- `GET /items/:id` - Retrieve a single item by ID
+- `POST /items` - Create a new item (name & description required)
+- `PUT /items/:id` - Update an existing item (optional name/description)
+- `DELETE /items/:id` - Delete an item by ID
+
+## 🛠 Features
+
+- In-memory CRUD for items
+- Each item has an `id`, `name`, and `description`
+- Full error handling for 400, 404, 500 responses
+- Sample API request/response examples
+
+## 📄 License
+
+MIT
