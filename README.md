@@ -1,32 +1,64 @@
-# Express Items API
+# Express API Project
 
-This is a simple RESTful API using Node.js and Express for managing items with in-memory storage.
+## Overview
+A simple Express.js RESTful API with in-memory storage for managing items.
 
-## 🚀 Getting Started
+## Features
+- Full CRUD (Create, Read, Update, Delete) functionality for items
+- In-memory storage (no database)
+- Centralized error handling
+- 404 not found middleware
+- Modular structure
+- Postman collection for easy API testing
+
+## Project Structure
+
+```
+express-api-project/
+├── app.js
+├── routes/
+│   └── items.js
+├── middleware/
+│   └── errorHandler.js
+├── postman_collection.json
+├── package.json
+└── README.md
+```
+
+## Installation
 
 ```bash
 npm install
+```
+
+## Running the App
+
+```bash
+# For production
 npm start
+
+# For development (auto-restarts)
+npm run dev
 ```
 
-## Running the app
-The app runs on http://localhost:3000 by default.
+## API Endpoints
 
-## 🧪 API Testing
+| Method | Endpoint         | Description             |
+|--------|------------------|-------------------------|
+| GET    | /items           | Get all items           |
+| GET    | /items/:id       | Get item by ID          |
+| POST   | /items           | Create a new item       |
+| PUT    | /items/:id       | Update an existing item |
+| DELETE | /items/:id       | Delete an item          |
 
-Use [Postman](https://postman.com) to test endpoints. Example Postman Collection is not included but sample outputs are shown below.
+## Request & Response Examples
 
-### Postman Collection
-A sample Postman collection is provided in `postman_collection.json` for quick testing.
-
-You can import it into Postman or Insomnia for immediate use.
-
-### Sample POST /items
-**Request**
+### Create Item (POST /items)
+**Request Body**
 ```json
 {
-  "name": "Laptop",
-  "description": "A lightweight device"
+  "name": "Item A",
+  "description": "Description of Item A"
 }
 ```
 
@@ -34,65 +66,28 @@ You can import it into Postman or Insomnia for immediate use.
 ```json
 {
   "id": 1,
-  "name": "Laptop",
-  "description": "A lightweight device"
+  "name": "Item A",
+  "description": "Description of Item A"
 }
 ```
 
-### Sample GET /items
-**Response**
+### Error Example (404)
 ```json
-[
-  {
-    "id": 1,
-    "name": "Laptop",
-    "description": "A lightweight device"
+{
+  "error": {
+    "message": "Item not found",
+    "status": 404
   }
-]
-```
-
-### Sample PUT /items/1
-**Request**
-```json
-{
-  "description": "Updated description"
 }
 ```
 
-**Response**
-```json
-{
-  "id": 1,
-  "name": "Laptop",
-  "description": "Updated description"
-}
-```
+## Postman Collection
+A complete Postman collection is provided: `postman_collection.json`
 
-### Sample DELETE /items/1
-**Response**
-```json
-{
-  "id": 1,
-  "name": "Laptop",
-  "description": "Updated description"
-}
-```
+1. Import it into Postman.
+2. Use the collection to test all endpoints.
+3. Set `base_url` environment variable (e.g., `http://localhost:3000`).
 
-## 🔁 Endpoints
+---
 
-- `GET /items` - Retrieve all items
-- `GET /items/:id` - Retrieve a single item by ID
-- `POST /items` - Create a new item (name & description required)
-- `PUT /items/:id` - Update an existing item (optional name/description)
-- `DELETE /items/:id` - Delete an item by ID
-
-## 🛠 Features
-
-- In-memory CRUD for items
-- Each item has an `id`, `name`, and `description`
-- Full error handling for 400, 404, 500 responses
-- Sample API request/response examples
-
-## 📄 License
-
-MIT
+Enjoy building with Express.js!

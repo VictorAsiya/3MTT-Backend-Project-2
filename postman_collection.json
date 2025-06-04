@@ -11,9 +11,115 @@
         "url": {
           "raw": "http://localhost:3000/api/items",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["api", "items"]
+          "path": [
+            "api",
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET All Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/items",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Item by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/items/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "items",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Create Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Item A\",\n  \"description\": \"Description A\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/items",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT Update Item",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Item A\",\n  \"description\": \"Updated Description\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/items/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "items",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE Item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/items/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "items",
+            "1"
+          ]
         }
       }
     }
