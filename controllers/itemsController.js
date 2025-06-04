@@ -16,7 +16,6 @@ exports.createItem = (req, res) => {
   if (!name || !description) {
     return res.status(400).json({ error: 'Name and description are required' });
   }
-
   const newItem = { id: idCounter++, name, description };
   items.push(newItem);
   res.status(201).json(newItem);
@@ -27,13 +26,8 @@ exports.updateItem = (req, res) => {
   const item = items.find(i => i.id === parseInt(req.params.id));
   if (!item) return res.status(404).json({ error: 'Item not found' });
 
-  if (!name && !description) {
-    return res.status(400).json({ error: 'At least name or description must be provided' });
-  }
-
   if (name) item.name = name;
   if (description) item.description = description;
-
   res.json(item);
 };
 

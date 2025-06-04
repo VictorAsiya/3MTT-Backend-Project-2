@@ -9,9 +9,17 @@ npm install
 npm start
 ```
 
+## Running the app
+The app runs on http://localhost:3000 by default.
+
 ## 🧪 API Testing
 
 Use [Postman](https://postman.com) to test endpoints. Example Postman Collection is not included but sample outputs are shown below.
+
+### Postman Collection
+A sample Postman collection is provided in `postman_collection.json` for quick testing.
+
+You can import it into Postman or Insomnia for immediate use.
 
 ### Sample POST /items
 **Request**
